@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.book-item {
+  display: flex;
+  gap: 50px;
+}
+
+.book-item button {
+  padding: 0;
+}
