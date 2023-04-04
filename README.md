@@ -46,9 +46,15 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>React</summary>
+  <summary>Components</summary>
   <ul>
     <li>React JS</li>
+  </ul>
+</details>
+<details>
+  <summary>Functionaality</summary>
+  <ul>
+    <li>React-redux</li>
   </ul>
 </details>
 <details>

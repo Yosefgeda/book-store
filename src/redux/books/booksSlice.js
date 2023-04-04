@@ -21,6 +21,8 @@ const initialState = [
     "category": "Nonfiction"
   }
 ];
+import { createSlice } from '@reduxjs/toolkit';
+
 
 const BookSlice = createSlice({
   name: 'book',
