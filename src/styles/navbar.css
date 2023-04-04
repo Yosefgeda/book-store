@@ -1,0 +1,26 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 5%;
+}
+
+.nav-bar li {
+  list-style: none;
+}
+
+.nav-bar li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+}
