@@ -1,12 +1,17 @@
 /* eslint-disable*/
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import BooksLogic from "./BooksLogic";
 import Categories from "./Categories";
+
 import '../styles/app.css'
 
-const App = () => (
+const App = () => {
+  
+
+  return(
 
   <div className="container">
     <Navbar />
@@ -18,7 +23,7 @@ const App = () => (
     </Routes>
     
   </div>
-);
+)};
 
 export default App;
 
