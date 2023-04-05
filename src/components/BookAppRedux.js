@@ -7,7 +7,6 @@ const Book = (props) => {
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(removeBook(props.item_id))
-    console.log(props.item_id);
   }
   return (
     <li id={props.item_id}>
