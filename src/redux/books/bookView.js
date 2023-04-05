@@ -1,19 +1,20 @@
 /* eslint-disable */
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {addBook, removeBook} from './booksSlice'
+import BookForm from "../../components/BookFormRedux";
+
 
 const BookView = () => {
-    const bookListed = useSelector((state) => state.book)
-    // console.log(bookListed)
     
-    const bookItm = bookListed.map(item => {
-        return <li key={item.item_id}>{item.title}, {item.author} <button>Delete</button></li>        
-      });
-
-        return (
-          <ul>
-          {bookItm}
-          </ul>
+    const bookListed = useSelector((state) => state.book)
+    
+    
+    return (
+          <>
+          
+          </>
+           
         );
 }
 
