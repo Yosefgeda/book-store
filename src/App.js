@@ -1,10 +1,14 @@
 /* eslint-disable */
-import BookView from './redux/books/bookView';
+import BookForm from './components/BookFormRedux';
+import BookItem from './components/BookListRedux';
+import Navbar from './components/Navbar'
 
 function App () {
   return (
     <div>
-      <BookView />
+      <Navbar />
+      <BookItem />
+      <BookForm />
     </div>
   )
 };

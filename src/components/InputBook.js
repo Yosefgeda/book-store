@@ -32,7 +32,7 @@ const InputBook = ({ addBookItem }) => {
         name='bookTitle'
         className="input-text"
         type="text"
-        placeholder="Add Todo..."
+        placeholder="Add Book..."
         value={title.bookTitle}
         onChange={handleChange}
       />

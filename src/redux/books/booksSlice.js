@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
 
+
 const initialState = [
   {
     "item_id": "item1",
@@ -27,10 +28,10 @@ const BookSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.push(action.payload);
+       state.push(action.payload)
     },
     removeBook: (state, action) => {
-      state.filter(action.payload);
+      return state.filter((item) => item.item_id !== action.payload); 
     },
   },
 });
