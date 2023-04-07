@@ -1,0 +1,6 @@
+.book-list-container {
+    height: 300px;
+    overflow-y: scroll;
+    list-style: none;
+    padding: 0;
+  }

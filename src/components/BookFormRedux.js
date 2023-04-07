@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook, addBookAsync } from "../redux/books/booksSlice";
+import '../styles/bookform.css';
 
 
 const BookForm = () => {
@@ -11,14 +12,6 @@ const BookForm = () => {
     const [author, setAuthor] = useState('');
     const dispatch = useDispatch();
     
-
-    // const handleChange = (e) => {
-    //     setBook((book) => ({
-    //         ...book,
-    //         [e.target.name]: e.target.value
-    //       }));
-    // };
-
     const handleAddBook = (e) => {
         e.preventDefault();
         if(title && author){
@@ -35,7 +28,6 @@ const BookForm = () => {
             setAuthor('');
         });}
     };
-    
 
     return (
         <form onSubmit={handleAddBook}>
@@ -51,7 +43,7 @@ const BookForm = () => {
                 type='text'  value={author}
                 onChange={(e) => {setAuthor(e.target.value)}}
             />
-            <button type="submit">Add Book</button>
+            <button className="submit-btn" type="submit">Add Book</button>
         </form>
     )
 }

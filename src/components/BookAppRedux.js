@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
 import { deleteBookAsync } from '../redux/books/booksSlice';
+import '../styles/booklist.css';
 
 const Book = ({book}) => {
 
@@ -12,9 +12,9 @@ const Book = ({book}) => {
   }
 
   return (
-    <li id={book.item_id}>
+    <li className='book-list'>
         Book Title : {book.title},  Author: {book.author}
-        <button type="button" onClick={handleDelete}>
+        <button className='book-list' type="button" onClick={handleDelete}>
             Delete
         </button>
     </li>

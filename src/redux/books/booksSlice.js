@@ -13,15 +13,27 @@ export const getBookAsync = createAsyncThunk('book/gethBooks', async () => {
   }
 });
 
-export const deleteBookAsync = createAsyncThunk('book/deleteBook', async (id) => {
-  try {
-    const response = await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZEAeqeXuXcX9bQfaMnAJ/books/${id}`,
-    {method:'DELETE'});
-    return response;
-  } catch (error) {
-    return error;
+// export const deleteBookAsync = createAsyncThunk('book/deleteBook', async (id) => {
+//   try {
+//     const response = await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZEAeqeXuXcX9bQfaMnAJ/books/${id}`,
+//     {method:'DELETE'});
+//     return response;
+//   } catch (error) {
+//     return error;
+//   }
+// });
+
+export const deleteBookAsync = createAsyncThunk(
+  'book/deleteBook',
+  async (id) => {
+    try {
+      await axios.delete(`${reciver}/${id}`, { method: 'DELETE' });
+      return id; // Return the ID of the deleted book
+    } catch (error) {
+      return error;
+    }
   }
-});
+);
 
 export const addBookAsync = createAsyncThunk('book/addBook', async (book) => {
   try {
@@ -67,10 +79,11 @@ const BookSlice = createSlice({
       }));
       return ({
         ...state,
-        books: newBook,
+        book: newBook,
         loading: false,
       });
     })
+    
     builder.addCase( getBookAsync.rejected , (state, action) => ({
       ...state,
       loading: false,
@@ -80,10 +93,19 @@ const BookSlice = createSlice({
       ...state,
       success: false,
     }));
-    builder.addCase(deleteBookAsync.fulfilled, (state) =>  ({
-      ...state,
-      success: true,
-    }));
+    // builder.addCase(deleteBookAsync.fulfilled, (state) =>  ({
+    //   ...state,
+    //   success: true,
+    // }));
+    builder.addCase(deleteBookAsync.fulfilled, (state, action) => {
+      const deletedBookId = action.payload;
+      const filteredBooks = state.book.filter((item) => item.item_id !== deletedBookId);
+      return {
+        ...state,
+        book: filteredBooks,
+        success: true,
+      };
+    });
     builder.addCase( deleteBookAsync.rejected , (state, action) => ({
       ...state,
       success: false,

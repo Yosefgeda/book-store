@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { getBookAsync } from '../redux/books/booksSlice';
 import { useEffect } from 'react';
 
-import Book from './BookAppRedux' 
+import Book from './BookAppRedux'
+import '../styles/listcontainer.css';
 
 const BookItem = () => {
 
-  const dispatch = useDispatch();
   const { book, loading, error, success } = useSelector((store) => store.book);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBookAsync());
@@ -21,7 +22,7 @@ const BookItem = () => {
   
   return (
   
-      <ul>
+      <ul className="book-list-container">
       {book.map((item) => (
         <Book key={item.item_id} book={item} />
       ))}
