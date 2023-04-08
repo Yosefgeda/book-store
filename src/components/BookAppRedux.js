@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBookAsync } from '../redux/books/booksSlice';

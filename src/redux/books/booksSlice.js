@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
@@ -13,22 +12,13 @@ export const getBookAsync = createAsyncThunk('book/gethBooks', async () => {
   }
 });
 
-// export const deleteBookAsync = createAsyncThunk('book/deleteBook', async (id) => {
-//   try {
-//     const response = await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZEAeqeXuXcX9bQfaMnAJ/books/${id}`,
-//     {method:'DELETE'});
-//     return response;
-//   } catch (error) {
-//     return error;
-//   }
-// });
 
 export const deleteBookAsync = createAsyncThunk(
   'book/deleteBook',
   async (id) => {
     try {
       await axios.delete(`${reciver}/${id}`, { method: 'DELETE' });
-      return id; // Return the ID of the deleted book
+      return id;
     } catch (error) {
       return error;
     }

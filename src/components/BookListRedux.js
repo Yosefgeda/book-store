@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useSelector, useDispatch } from "react-redux";
 import { getBookAsync } from '../redux/books/booksSlice';
 import { useEffect } from 'react';
