@@ -14,7 +14,7 @@ const BookForm = () => {
         e.preventDefault();
         if (title && author) {
         const book = {
-        item_id: Math.floor(Math.random()*10000),
+        item_id: Math.floor(Math.random() * 10000),
         title,
         author,
         category: 'Politics',
@@ -35,13 +35,13 @@ const BookForm = () => {
                 placeholder='Enter Book Title'
                 type='text'
                 value={title}
-                onChange={(e) => {setTitle(e.target.value)}}
-                />
+                onChange={ (e) => {setTitle(e.target.value)} }
+            />
             <input 
                 name='author'
                 placeholder='Enter Author'
                 type='text'
-                value={ author }
+                value={author}
                 onChange={(e) => { setAuthor(e.target.value) }}
             />
             <button className="submit-btn" type="submit">Add Book</button>
@@ -49,4 +49,3 @@ const BookForm = () => {
     )
 }
 export default BookForm
-

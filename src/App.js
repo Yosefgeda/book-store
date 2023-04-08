@@ -10,6 +10,6 @@ function App() {
       <BookForm />
     </div>
   );
-};
+}
 
 export default App;

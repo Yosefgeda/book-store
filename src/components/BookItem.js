@@ -1,4 +1,4 @@
-/* eslint-diasble */
+/* eslint-disable */
 import { useSelector } from "react-redux";
 import '../styles/bookItem.css'
 

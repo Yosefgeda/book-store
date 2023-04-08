@@ -34,7 +34,8 @@
       "no-trailing-spaces": "off",
       "object-curly-newline": "off",
       "comma-dangle": "off",
-      "comma-spacing": "off"
+      "comma-spacing": "off",
+      "react/jsx-one-expression-per-line": "off"
 
     },
     "ignorePatterns": [

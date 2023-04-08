@@ -73,7 +73,7 @@ const BookSlice = createSlice({
       });
     })
     
-    builder.addCase( getBookAsync.rejected , (state, action) => ({
+    builder.addCase(getBookAsync.rejected , (state, action) => ({
       ...state,
       loading: false,
       error: true,
@@ -91,7 +91,7 @@ const BookSlice = createSlice({
         success: true,
       };
     });
-    builder.addCase( deleteBookAsync.rejected , (state, action) => ({
+    builder.addCase(deleteBookAsync.rejected , (state, action) => ({
       ...state,
       success: false,
     }));
@@ -103,7 +103,7 @@ const BookSlice = createSlice({
       ...state,
       error: false,
     }));
-    builder.addCase( addBookAsync.rejected , (state) => ({
+    builder.addCase(addBookAsync.rejected , (state) => ({
       ...state,
       error: true,
     }));
