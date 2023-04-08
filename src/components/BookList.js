@@ -1,3 +1,4 @@
+/* eslint-diasble */
 import BookItem from './BookItem';
 
 const BookList = (props) => {

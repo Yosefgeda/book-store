@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { addBook, addBookAsync } from "../redux/books/booksSlice";
 import '../styles/bookform.css';
 
-
 const BookForm = () => {
 
     const [title, setTitle] = useState('');
@@ -13,7 +12,7 @@ const BookForm = () => {
     
     const handleAddBook = (e) => {
         e.preventDefault();
-        if(title && author){
+        if (title && author) {
         const book = {
         item_id: Math.floor(Math.random()*10000),
         title,
@@ -25,7 +24,8 @@ const BookForm = () => {
             dispatch(addBook(book));
             setTitle('');
             setAuthor('');
-        });}
+        });
+    }
     };
 
     return (
@@ -33,14 +33,16 @@ const BookForm = () => {
             <input 
                 name='title'
                 placeholder='Enter Book Title'
-                type='text'  value={title}
+                type='text'
+                value={title}
                 onChange={(e) => {setTitle(e.target.value)}}
-            />
+                />
             <input 
                 name='author'
                 placeholder='Enter Author'
-                type='text'  value={author}
-                onChange={(e) => {setAuthor(e.target.value)}}
+                type='text'
+                value={ author }
+                onChange={(e) => { setAuthor(e.target.value) }}
             />
             <button className="submit-btn" type="submit">Add Book</button>
         </form>
