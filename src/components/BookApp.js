@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -9,21 +8,20 @@ import Categories from "./Categories";
 import '../styles/app.css'
 
 const App = () => {
-  
 
-  return(
+  return (
 
   <div className="container">
     <Navbar />
 
-    <Routes>
-      <Route path="/" element={<BooksLogic />} />
-      <Route path="/categories" element={<Categories />} />
+      <Routes>
+        <Route path="/" element={<BooksLogic />} />
+        <Route path="/categories" element={<Categories />} />
 
-    </Routes>
+      </Routes>
     
   </div>
-)};
+);
+};
 
 export default App;
-

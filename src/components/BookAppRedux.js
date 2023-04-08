@@ -1,17 +1,20 @@
-/* eslint-disable */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBookAsync } from '../redux/books/booksSlice';
+import '../styles/booklist.css';
 
-const Book = (props) => {
+const Book = ({ book }) => {
+
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(removeBook(props.item_id))
+    dispatch(deleteBookAsync(book.item_id))
   }
+
   return (
-    <li id={props.item_id}>
-        Book Title : {props.title},  Author: {props.author}
-        <button type="button" onClick={handleDelete}>
+    <li className='book-list'>
+        Book Title : {book.title},
+        Author: {book.author}
+        <button className='book-list' type="button" onClick={handleDelete}>
             Delete
         </button>
     </li>
